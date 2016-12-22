@@ -1,0 +1,42 @@
+<ion-view view-title="{{ 'mm.educaper.educaper' | translate }}">
+    <ion-nav-buttons side="secondary">
+
+        <mm-context-menu>
+
+        </mm-context-menu>
+    </ion-nav-buttons>
+    <mm-split-view component="EducaperDashboard">
+        <ion-content mm-state-class>
+            <ul class="list">
+                <li>
+                    <a class="item" mm-split-view-link="site.mm_educaper-dashboard" title="{{ 'mm.educaper.dashboard' | translate }}" ng-click=" showAlert() ">
+                        {{ 'mm.educaper.dashboard' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a class="item" title="{{ 'mm.educaper.departments' | translate }}" ng-click=" ShowDep()">
+                        {{ 'mm.educaper.departments' | translate }}
+                    </a>
+                    <a mm-split-view-link="site.mm_educaper-departments" class=" item item-accordion" ng-repeat="department in Departments" class="icon ion-unlocked" ng-click="hide(department)">-{{department.name}} 
+						</a>
+                </li>
+
+                <li>
+                    <a class="item item-icon-left" ng-click="RateTheLesson()">
+                        <span class="badge badge-assertive ">2</span> End Of the Lesson
+                    </a>
+                </li>
+                <li>
+                    <a class="item " ng-click="showAlert()">
+							General Analitics
+						</a>
+                </li>
+                <li>
+                    <a class="item" mm-split-view-link="site.mm_educaper-about" title="{{ 'mm.educaper.about' | translate }}">
+                        {{ 'mm.educaper.about' | translate }}
+                    </a>
+                </li>
+            </ul>
+        </ion-content>
+    </mm-split-view>
+</ion-view>

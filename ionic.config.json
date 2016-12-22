@@ -1,0 +1,15 @@
+{
+  "name": "educaper",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "build",
+    "sass",
+    "watch",
+    "lang",
+    "config"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
