@@ -1,6 +1,9 @@
 <ion-view view-title="{{ 'mm.educaper.educaper' | translate }}">
     <ion-nav-buttons side="secondary">
-
+        <button>
+                    <a ng-click="showrate()">
+                        <span class="badge badge-assertive ">4</span> End Of the Lasson</a>
+</button>
         <mm-context-menu>
 
         </mm-context-menu>
@@ -9,7 +12,7 @@
         <ion-content mm-state-class>
             <ul class="list">
                 <li>
-                    <a class="item" mm-split-view-link="site.mm_educaper-dashboard" title="{{ 'mm.educaper.dashboard' | translate }}" ng-click=" showAlert() ">
+                    <a class="item" mm-split-view-link="site.mm_educaper-dashboard" title="{{ 'mm.educaper.dashboard' | translate }}">
                         {{ 'mm.educaper.dashboard' | translate }}
                     </a>
                 </li>
@@ -21,10 +24,7 @@
 						</a>
                 </li>
 
-                <li>
-                    <a class="item" ng-click="showrate()">
-                        <span class="badge badge-assertive ">4</span> End Of the Lasson</a>
-                </li>
+
 
                 <li>
                     <a class="item " ng-click="showAlert()">
