@@ -22,7 +22,7 @@ angular.module('mm.core.login')
  * @name mmLoginSiteCtrl
  */
 .controller('mmLoginSiteCtrl', function($scope, $state, $mmSitesManager, $mmUtil, $ionicHistory, $mmApp, $ionicModal, $ionicPopup,
-        $mmLoginHelper, $q) {
+    $mmLoginHelper, $q) {
 
     $scope.siteurl = '';
 
@@ -42,7 +42,7 @@ angular.module('mm.core.login')
             // It's a demo site.
             $mmSitesManager.getUserToken(sitedata.url, sitedata.username, sitedata.password).then(function(data) {
                 $mmSitesManager.newSite(data.siteurl, data.token, data.privatetoken).then(function() {
-                    $ionicHistory.nextViewOptions({disableBack: true});
+                    $ionicHistory.nextViewOptions({ disableBack: true });
                     return $mmLoginHelper.goToSiteInitialPage();
                 }, function(error) {
                     $mmUtil.showErrorModal(error);
@@ -65,9 +65,9 @@ angular.module('mm.core.login')
                 if ($mmLoginHelper.isSSOLoginNeeded(result.code)) {
                     // SSO. User needs to authenticate in a browser.
                     $mmLoginHelper.confirmAndOpenBrowserForSSOLogin(
-                                result.siteurl, result.code, result.service, result.config && result.config.launchurl);
+                        result.siteurl, result.code, result.service, result.config && result.config.launchurl);
                 } else {
-                    $state.go('mm_login.credentials', {siteurl: result.siteurl, siteconfig: result.config});
+                    $state.go('mm_login.credentials', { siteurl: result.siteurl, siteconfig: result.config });
                 }
             }, function(error) {
                 showLoginIssue(url, error);
@@ -87,7 +87,7 @@ angular.module('mm.core.login')
         $scope.siteurl = siteurl;
         $scope.issue = issue;
         var popup = $ionicPopup.show({
-            templateUrl:  'core/components/login/templates/login-issue.html',
+            templateUrl: 'core/components/login/templates/login-issue.html',
             scope: $scope
         });
 
@@ -114,5 +114,4 @@ angular.module('mm.core.login')
             helpModal.remove();
         });
     });
-
 });

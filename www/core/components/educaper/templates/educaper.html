@@ -17,15 +17,15 @@
                     <a class="item" title="{{ 'mm.educaper.departments' | translate }}" ng-click=" ShowDep()">
                         {{ 'mm.educaper.departments' | translate }}
                     </a>
-                    <a mm-split-view-link="site.mm_educaper-departments" class=" item item-accordion" ng-repeat="department in Departments" class="icon ion-unlocked" ng-click="hide(department)">-{{department.name}} 
+                    <a mm-split-view-link="site.mm_educaper-departments" class=" item item-accordion" ng-repeat="department in Departments" ng-click="hide(department)">-{{department.name}} 
 						</a>
                 </li>
 
                 <li>
-                    <a class="item item-icon-left" ng-click="RateTheLesson()">
-                        <span class="badge badge-assertive ">2</span> End Of the Lesson
-                    </a>
+                    <a class="item" ng-click="showrate()">
+                        <span class="badge badge-assertive ">4</span> End Of the Lasson</a>
                 </li>
+
                 <li>
                     <a class="item " ng-click="showAlert()">
 							General Analitics

@@ -15,16 +15,16 @@
 angular.module('mm.core.educaper', [])
 
 .constant('mmCoreSettingsReportInBackground', 'mmCoreReportInBackground')
-.constant('mmCoreSettingsRichTextEditor', 'mmCoreSettingsRichTextEditor')
-.constant('mmCoreSettingsSyncOnlyOnWifi', 'mmCoreSyncOnlyOnWifi')
+    .constant('mmCoreSettingsRichTextEditor', 'mmCoreSettingsRichTextEditor')
+    .constant('mmCoreSettingsSyncOnlyOnWifi', 'mmCoreSyncOnlyOnWifi')
 
 .config(function($stateProvider) {
 
     $stateProvider
 
-    .state('site.mm_educaper', {
+        .state('site.mm_educaper', {
         url: '/mm_educaper',
-         views: {
+        views: {
             'site': {
                 templateUrl: 'core/components/educaper/templates/educaper.html',
                 controller: 'mmEducaperCtrl'
@@ -52,6 +52,26 @@ angular.module('mm.core.educaper', [])
         }
     })
 
+    .state('site.mm_educaper-rate', {
+        url: '/mm_educaper-end',
+        views: {
+            'site': {
+                templateUrl: 'core/components/educaper/templates/rate.html'
+
+            }
+        }
+    })
+
+    .state('site.mm_educaper-comment', {
+        url: '/mm_educaper-comment',
+        views: {
+            'site': {
+                templateUrl: 'core/components/educaper/templates/comment.html'
+
+            }
+        }
+    })
+
     .state('site.mm_educaper-about', {
         url: '/mm_educaper-about',
         views: {
@@ -75,7 +95,7 @@ angular.module('mm.core.educaper', [])
 })
 
 .run(function($mmEvents, mmCoreEventLogin, mmCoreEventSiteUpdated, mmCoreEventLogout, $mmSettingsDelegate,
-            mmCoreEventRemoteAddonsLoaded) {
+    mmCoreEventRemoteAddonsLoaded) {
     $mmEvents.on(mmCoreEventLogin, $mmSettingsDelegate.updateHandlers);
     $mmEvents.on(mmCoreEventSiteUpdated, $mmSettingsDelegate.updateHandlers);
     $mmEvents.on(mmCoreEventRemoteAddonsLoaded, $mmSettingsDelegate.updateHandlers);

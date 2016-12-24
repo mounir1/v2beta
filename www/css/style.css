@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+.img-responsive {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25%;
+}
+
+pa {
+    margin-top: 18%;
+    font-family: lato;
+    color: #FFFFFF;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.col {
+    border-top: 1px rgba(255, 255, 255, 0.3) solid;
+}
+
+#good:hover {
+    background-color: #25df86;
+}
+
+#verygood:hover {
+    background-color: #4edce6;
+}
+
+#bad:hover {
+    background-color: #de50d8;
+}
+
+#average:hover {
+    background-color: #e4b656;
+}
+
+#verybad:hover {
+    background-color: #da505f;
+}
+
+textarea {
+    font-size: 16px;
+    font-family: lato;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px 5px 0px 0px;
+    width: 80%;
+    height: 30%;
+}
+
+#textbutton {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #33cd5f;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#textbutton:active {
+    background-color: #38b85c;
+}

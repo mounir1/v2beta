@@ -58,20 +58,56 @@ angular.module('mm.core.educaper')
             console.log('Thank you for not eating my delicious ice cream cone');
         });
     };
-    $scope.RateTheLesson = function() {
-        $ionicModal.fromTemplateUrl('core/components/educaper/templates/rate.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function(helpModal) {
-            $scope.showHelp = function() {
-                helpModal.show();
-            };
-            $scope.closeHelp = function() {
-                helpModal.hide();
-            };
-            $scope.$on('$destroy', function() {
-                helpModal.remove();
-            });
+    // $scope.RateTheLesson = function() {
+    //         $ionicPopup.show({
+    //             scope: $scope,
+    //             title: 'Rate!',
+    //             templateUrl: 'core/components/educaper/templates/rate.html'
+
+    //         });
+    //     }
+    // Setup help modal.
+    $ionicModal.fromTemplateUrl('core/components/educaper/templates/rate.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(helpModal) {
+        $scope.showrate = function() {
+            helpModal.show();
+        };
+        $scope.closerate = function() {
+            helpModal.hide();
+        };
+        $scope.$on('$destroy', function() {
+            helpModal.remove();
         });
-    };
+    });
+
+    $ionicModal.fromTemplateUrl('core/components/educaper/templates/comment.html', {
+        scope: $scope,
+        animation: 'slide-in-down'
+    }).then(function(helpModal) {
+        $scope.showcomment = function() {
+            helpModal.show();
+        };
+        $scope.closecomment = function() {
+            helpModal.hide();
+        };
+        $scope.$on('$destroy', function() {
+            helpModal.remove();
+        });
+    });
+    // $ionicModal.fromTemplateUrl('core/components/educaper/templates/rate.html', {
+    //     scope: $scope,
+    //     animation: 'slide-in-up'
+    // }).then(function(helpModal) {
+    //     $scope.RateTheLesson = function() {
+    //         helpModal.show();
+    //     };
+    //     $scope.closeHelp = function() {
+    //         helpModal.hide();
+    //     };
+    //     $scope.$on('$destroy', function() {
+    //         helpModal.remove();
+    //     });
+    // });
 });
