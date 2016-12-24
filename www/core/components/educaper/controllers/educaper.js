@@ -21,10 +21,11 @@ angular.module('mm.core.educaper')
  * @ngdoc controller
  * @name mmSettingsListCtrl
  */
-.controller('mmEducaperCtrl', function($scope, $ionicPopup, $ionicModal) {
+.controller('mmEducaperCtrl', function($scope, $rootScope, $ionicPopup, $ionicModal) {
     $scope.isIOS = ionic.Platform.isIOS();
     $scope.Departments = null;
-
+    $scope.endoflessones = 4;
+    $rootScope.done = false;
     $scope.ShowDep = function() {
         $scope.Departments = [{
                 name: "Engineering Department",
@@ -55,7 +56,7 @@ angular.module('mm.core.educaper')
         });
         console.log("showAlert");;
         alertPopup.then(function(res) {
-            console.log('Thank you for not eating my delicious ice cream cone');
+
         });
     };
     // $scope.RateTheLesson = function() {
@@ -73,6 +74,10 @@ angular.module('mm.core.educaper')
     }).then(function(helpModal) {
         $scope.showrate = function() {
             helpModal.show();
+            helpModal.hide();
+            $scope.endoflessones = $scope.endoflessones - 1;
+
+
         };
         $scope.closerate = function() {
             helpModal.hide();

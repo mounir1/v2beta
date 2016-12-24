@@ -22,14 +22,14 @@ angular.module('mm.core.educaper')
  * @name mmSettingsListCtrl
  */
 
-.controller('mmDashboardCtrl', function($scope, $mmCourses, $mmSettingsDelegate) {
+.controller('mmDashboardCtrl', function($scope, $mmCourses, $rootScope, $mmSettingsDelegate) {
     $scope.isIOS = ionic.Platform.isIOS();
     $scope.handlers = $mmSettingsDelegate.getHandlers();
     $scope.areHandlersLoaded = $mmSettingsDelegate.areHandlersLoaded;
 
     console.log('mmCourses' + $mmCourses);
 
-    var courses = $mmCourses.currentCourses;
+    var courses = $mmCourses.getCourses;
     console.log('courses: ' + courses)
     Highcharts.chart('piechart', {
         chart: {
